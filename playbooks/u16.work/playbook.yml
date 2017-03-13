@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+
+  - name: Enable and start services.
+    service: name={{ item }} state=started enabled=yes
+    with_items:
+    - ssh
